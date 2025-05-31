@@ -11,4 +11,4 @@ print(new_list)
 for x in my_list[0:index]:
     new1_list.append(x)
 full_list = new1_list+new_list
-print(full_list)
+print(full_list)        #printing full list
