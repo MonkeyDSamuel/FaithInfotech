@@ -5,7 +5,7 @@ my_list = string.split()
 new_list = []
 new1_list = []
 for x in my_list[index:]:
-    new_list.append(x)
+    new_list.append(x)      #new list appending values from old list
 new_list.sort()
 print(new_list)
 for x in my_list[0:index]:
