@@ -8,7 +8,7 @@ for x in my_list[index:]:
     new_list.append(x)      #new list appending values from old list
 new_list.sort()
 print(new_list)
-for x in my_list[0:index]:
+for x in my_list[0:index]:      #setting up for loop with index
     new1_list.append(x)
 full_list = new1_list+new_list
 print(full_list)        #printing full list
