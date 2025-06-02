@@ -15,7 +15,7 @@ medicines = {}
 username = "Samuel"
 password = "Hello"
 
-
+# LOGIN FUNCTION
 def Login():
     print("-------WELCOME DEAR PHARMACIST-------")
     u_name = input("Enter the username of the pharmacist: ")
@@ -27,6 +27,7 @@ def Login():
         print("-------INVALID CREDENTIALS-------")
         return False
     
+# FUNCTION TO ADD MEDICINE
 def Add_med():
     print("-------MEDICINE DETAILS-------")
     med_ID = int(input("Enter the ID of the medicine:"))
@@ -35,42 +36,46 @@ def Add_med():
     else:
         name = input("Enter the name of the medicine: ")
         company = input("Enter the company name of the medicine: ")
-        year = input("Enter the year of manufacture: ")
-        qty = input("Enter the quantity of the medicine:")
-        medicines[med_ID] = {"name":name, "company":company, "year":year, "qty":qty}
+        generic_name = input("Enter the generic name of the medicine: ")
+        price = input("Enter the price of the medicine: ")
+        medicines[med_ID] = {"name":name, "company":company, "generic_name":generic_name, "price":price}
 
+# FUNCTION TO DELETE MEDICINE FROM THE LIST
 def Del_med():
     print("-------MEDICINE DELETION FROM PHARMACY-------")
-    med_ID = int(input("Enter the ID of the medicine:"))
+    med_ID = int(input("Enter the ID of the medicine: "))
     if med_ID in medicines:
         del medicines[med_ID]
     else:
         print("-------INVALID MEDICINE ID-------THE MEDICINE DOES NOT EXIST-------")
 
+# FUNCTION TO UPDATE MEDICINE DETAILS
 def Upd_med():
     print("-------MEDICINE DETAILS UPDATION-------")
-    med_ID = int(input("Enter the ID of the medicine:"))
+    med_ID = int(input("Enter the ID of the medicine: "))
     if med_ID in medicines:
-        name = input(f"NEW MEDICINE NAME[{medicines[med_ID]["name"]}]" or medicines[med_ID]["name"])
-        company = input(f"NEW COMPANY NAME[{medicines[med_ID]["company"]}]" or medicines[med_ID]["company"])
-        year = input(f"UPDATED YEAR[{medicines[med_ID]["year"]}]" or medicines[med_ID]["year"])
-        qty = input(f"NEW UPDATED QUANTITY[{medicines[med_ID]["qty"]}]" or medicines[med_ID]["qty"])
-        medicines[med_ID] = {"name":name, "company":company, "year":year, "qty":qty}
+        name = input(f"NEW MEDICINE NAME[{medicines[med_ID]["name"]}]: " or medicines[med_ID]["name"])
+        company = input(f"NEW COMPANY NAME[{medicines[med_ID]["company"]}]: " or medicines[med_ID]["company"])
+        generic_name = input(f"UPDATED GENERIC NAME[{medicines[med_ID]["generic_name"]}]: " or medicines[med_ID]["generic_name"])
+        price = input(f"NEW UPDATED PRICE[{medicines[med_ID]["price"]}]: " or medicines[med_ID]["price"])
+        medicines[med_ID] = {"name":name, "company":company, "generic_name":generic_name, "price":price}
     else:
         print("-------MEDICINE ID NOT FOUND-------")
 
+# FUNCTION TO SEARCH FOR MEDICINE USING ID
 def Search_med():
     print("-------MEDICINE SEARCH FROM PHARMACY-------")
     med_ID = int(input("Enter the ID of the medicine:"))
     if med_ID in medicines:
         print("-------MEDICINE FOUND-------")
         print(f"MEDICINE NAME: {medicines[med_ID]["name"]}")
-        print(f"NEW COMPANY NAME: {medicines[med_ID]["company"]}")
-        print(f"UPDATED YEAR: {medicines[med_ID]["year"]}")
-        print(f"NEW UPDATED QUANTITY: {medicines[med_ID]["qty"]}")
+        print(f"COMPANY NAME: {medicines[med_ID]["company"]}")
+        print(f"GENERIC NAME: {medicines[med_ID]["generic_name"]}")
+        print(f"PRICE: {medicines[med_ID]["price"]}")
     else:
         print("-------MEDICINE NOT FOUND-------")
 
+# FUNCTION TO VIEW ALL MEDICINES FROM THE LIST
 def View_med():
     if not medicines:
         print("NO MEDICINES ARE AVAILABLE")
@@ -78,17 +83,19 @@ def View_med():
         print("-------LIST OF ALL MEDICINES FROM PHARMACY-------")
         for med_ID in medicines:
             print(f"MEDICINE NAME: {medicines[med_ID]["name"]}")
-            print(f"NEW COMPANY NAME: {medicines[med_ID]["company"]}")
-            print(f"UPDATED YEAR: {medicines[med_ID]["year"]}")
-            print(f"NEW UPDATED QUANTITY: {medicines[med_ID]["qty"]}")
+            print(f"COMPANY NAME: {medicines[med_ID]["company"]}")
+            print(f"GENERIC NAME: {medicines[med_ID]["generic_name"]}")
+            print(f"PRICE: {medicines[med_ID]["price"]}")
+
+# MENU FUNCTION TO START AFTER LOGIN IS VALID
 def Menu():
     while True:
-        print("1. Add new medicine")
-        print("2. Delete a medicine record")
-        print("3. Update details of a medicine")
-        print("4. Search for a particular medicine")
-        print("5. View all medicines available")
-        print("6. LOG OUT") 
+        print("\n1. Add new medicine")
+        print("\n2. Delete a medicine record")
+        print("\n3. Update details of a medicine")
+        print("\n4. Search for a particular medicine")
+        print("\n5. View all medicines available")
+        print("\n6. LOG OUT") 
 
         choice = input("Enter the numbered choice:")
 
