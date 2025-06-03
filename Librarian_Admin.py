@@ -236,7 +236,7 @@ def Menu():
         elif choice == 10:
             View_Bor_Book()
         elif choice == 11:
-            print("-------PROGRAM EXITTED SUCCESSFULLY-------")
+            print("-------PROGRAM EXITED SUCCESSFULLY-------")
             break
         else:
             print("-------INVALID CHOICE.... THE CHOICE MUST BE NUMBERS FROM (1 to 7)-------")
