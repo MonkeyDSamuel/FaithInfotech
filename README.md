@@ -7,6 +7,7 @@ STRING:
     1.string_commands.py
     2.String_questions.py
     3.string_questions_classword.py
+    4.count.py
 LIST:
     1.list.py
     2.List_questions.py
