@@ -1,5 +1,5 @@
 #LIST
-#Collection of data which are normally related related instead of storing these as separate variables
+#Collection of data which are normally related instead of storing these as separate variables
 students_age=[18,21,23,20,21]
 print(students_age)
 print(students_age[0])
