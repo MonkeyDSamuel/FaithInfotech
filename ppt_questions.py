@@ -1,4 +1,4 @@
-# Given an array of positive integers, arr[] of size n, find the 2nd largest distinct element in the array. If the second largest element doesn't exist, return -1
+# CODE TO SORT A PART OF THE THE LIST
 index = int(input("Enter the index value: "))
 string = input("Enter the list with spaces: ")
 my_list = string.split()
